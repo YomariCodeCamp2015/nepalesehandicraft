@@ -100,22 +100,29 @@
         android:text="Change Location"
         android:onClick="shpchange"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <Button android:id="@+id/shp_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAVE"
-        android:layout_gravity="center"
         android:onClick="shpsave"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
        />
 
     <Button android:id="@+id/shpedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="EDIT"
-        android:onClick="shpedit"/>
+        android:onClick="shpedit"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="170dp"
+        />
 
-
+    </LinearLayout>
 
 
 
