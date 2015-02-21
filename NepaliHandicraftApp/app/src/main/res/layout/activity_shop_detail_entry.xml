@@ -103,14 +103,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
     <Button android:id="@+id/shp_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAVE"
         android:onClick="shpsave"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
        />
 
     <Button android:id="@+id/shpedit"
@@ -119,7 +120,6 @@
         android:text="EDIT"
         android:onClick="shpedit"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="170dp"
         />
 
     </LinearLayout>
