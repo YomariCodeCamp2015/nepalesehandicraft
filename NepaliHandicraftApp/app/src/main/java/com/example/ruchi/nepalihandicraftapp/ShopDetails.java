@@ -53,8 +53,8 @@ TextView shpdetailtap,additemtap,itemview;
     }
 
     public void navigate_view(){
-       // intent=new Intent(this, EditItemActivity.class);
-       // startActivity(intent);
+       intent=new Intent(this, ListOfItem.class);
+       startActivity(intent);
     }
 
     @Override
