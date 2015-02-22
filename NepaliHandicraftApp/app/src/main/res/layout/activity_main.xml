@@ -7,17 +7,17 @@
         android:layout_height="wrap_content" android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="400dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/tourist"
+        android:id="@+id/shopk"
         android:src="@drawable/ic_shopkeeper"
         />
     <ImageView
         android:layout_width="200dp"
         android:layout_height="400dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/shopk"
+        android:id="@+id/tourist"
         android:src="@drawable/ic_tourist"
          />
         </LinearLayout>
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Viewer"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="60dp"
         android:id="@+id/viewer"
         android:textSize="30dp"/>
 </LinearLayout>
