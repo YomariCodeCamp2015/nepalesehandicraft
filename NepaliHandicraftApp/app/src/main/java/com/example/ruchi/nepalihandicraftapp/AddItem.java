@@ -12,41 +12,34 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class AddItem extends ActionBarActivity {
-   // private Spinner spinner;
-   // private static final String[]paths = {"Wood Carving", "Painting", "Metal Carving"};
+public class AddItem extends ActionBarActivity implements AdapterView.OnItemSelectedListener{
+    Spinner spinnercat;
+
+    private String[] state = { "Metal Carving", "Wood Carving", "Paintings" };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-       /* spinner = (Spinner)findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,paths);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener();
+        spinnercat = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, state);
+        adapter_state
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnercat.setAdapter(adapter_state);
+        spinnercat.setOnItemSelectedListener(this);
 
-    }
-    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-
-        switch (position) {
-            case 0:
-                // Whatever you want to happen when the first item gets selected
-                break;
-            case 1:
-                // Whatever you want to happen when the second item gets selected
-                break;
-            case 2:
-                // Whatever you want to happen when the thrid item gets selected
-                break;
-
-        }
-    }*/
 
     }
+  
+
+    
     public void addphoto(View view){
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         startActivityForResult(intent, 0);
@@ -79,5 +72,18 @@ public class AddItem extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        spinnercat.setSelection(position);
+        String selState = (String) spinnercat.getSelectedItem();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
