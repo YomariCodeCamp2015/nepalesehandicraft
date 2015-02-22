@@ -30,6 +30,7 @@ public class LoginShopkeeper extends ActionBarActivity {
     Intent intent;
     EditText uname;
     EditText pwd;
+    Toast toast;
     private ProgressDialog pDialog;
 
     JSONParser jsonParser = new JSONParser();
@@ -47,7 +48,7 @@ public class LoginShopkeeper extends ActionBarActivity {
             StrictMode.setThreadPolicy(policy);
         }
         TextView sup=(TextView)findViewById(R.id.signup);
-        uname=(EditText)findViewById(R.id.inputName);
+        uname=(EditText)findViewById(R.id.usname);
         pwd=(EditText)findViewById(R.id.mpwd);
 
         sup.setOnClickListener(new View.OnClickListener() {
@@ -62,8 +63,9 @@ public class LoginShopkeeper extends ActionBarActivity {
     }
 
     public void signin(View view){
-        navigateto();
-       // new VerifyLogin().execute();
+        //navigateto();
+        smthn();
+        //new VerifyLogin().execute();
     }
 
     public void navigate(){
@@ -71,11 +73,11 @@ public class LoginShopkeeper extends ActionBarActivity {
         startActivity(intent);
     }
 
-    class VerifyLogin extends AsyncTask<String, String, String> {
+/*    class VerifyLogin extends AsyncTask<String, String, String> {
 
-        /**
+        *//**
          * Before starting background thread Show Progress Dialog
-         */
+         *//*
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -126,14 +128,50 @@ public class LoginShopkeeper extends ActionBarActivity {
         }
 
 
-        /**
+        *//**
          * After completing background task Dismiss the progress dialog
-         * **/
+         * **//*
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
         }
-   }
+   }*/
+
+    public void smthn(){
+
+        String name = uname.getText().toString();
+        String pass1 = pwd.getText().toString();
+
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("username", name));
+        params.add(new BasicNameValuePair("password",pass1));
+
+        JSONObject json = jsonParser.makeHttpRequest(url_verify_login,
+                "POST", params);
+
+        Log.d("Create Response", json.toString());
+
+        // check for success tag
+        try {
+            int success = json.getInt(TAG_SUCCESS);
+            toast=Toast.makeText(getApplicationContext(),""+success, Toast.LENGTH_LONG);
+            toast.show();
+            if (success == 1) {
+                // successfully logged in
+                // if(json.getInt(TAG_VERIFY)==1) {
+                navigateto();
+                //}
+                // closing this screen
+                finish();
+            } else {
+                // failed to log
+                toast=Toast.makeText(getApplicationContext(),"Invalid Username or Password", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     public void navigateto(){
         Intent i = new Intent(this, ShopDetails.class);
         startActivity(i);

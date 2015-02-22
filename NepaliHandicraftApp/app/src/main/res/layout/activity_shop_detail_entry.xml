@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Set Location On Map"
-        android:onClick="setlocation"/>
+        android:onClick="setloc"/>
 
     <Button android:id="@+id/shpchange"
         android:layout_width="wrap_content"
@@ -110,7 +110,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAVE"
-        android:onClick="shpsave"
         android:layout_marginTop="20dp"
        />
 

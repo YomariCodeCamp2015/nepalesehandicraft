@@ -1,6 +1,7 @@
 package com.example.ruchi.nepalihandicraftapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -42,14 +43,18 @@ public class GoogleMapActivity extends FragmentActivity {
             public void onMapClick(LatLng latLng) {
                 Double lat=latLng.latitude;
                 Double log=latLng.longitude;
-                Context context = getApplicationContext();
-                CharSequence text = lat.toString()+" "+log.toString();
-                int duration = Toast.LENGTH_LONG;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                senddata(lat,log);
+                finish();
             }
         });
+    }
+
+    public void senddata(Double lt,Double lng){
+        Intent data = new Intent(this,ShopDetailEntry.class);
+        data.putExtra("lat", lt);
+        data.putExtra("long", lng);
+        // Activity finished ok, return the data
+        setResult(RESULT_OK, data);
     }
 
     /**

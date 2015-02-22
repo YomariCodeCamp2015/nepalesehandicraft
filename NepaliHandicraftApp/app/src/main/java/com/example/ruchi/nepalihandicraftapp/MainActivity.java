@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -24,7 +25,14 @@ Intent intent;
 
             }
         });
+        ImageView shopk=(ImageView) findViewById(R.id.shopk);
+        shopk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigate();
 
+            }
+        });
         TextView menu_viewer=(TextView)findViewById(R.id.viewer);
         menu_viewer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +41,14 @@ Intent intent;
 
             }
         });
+        ImageView tourist=(ImageView) findViewById(R.id.tourist);
+        tourist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigate1();
 
+            }
+        });
 
     }
 

@@ -4,15 +4,15 @@
     <string name="app_name">NepaliHandicraftApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Nepalese Handicrafts</string>
     <string name="title_activity_login_shopkeeper">Log In or Sign Up</string>
     <string name="title_activity_for_viewer">Search Options</string>
-    <string name="title_activity_profile_shopkeeper">ProfileShopkeeper</string>
+    <string name="title_activity_profile_shopkeeper">Shopkeeper's Profile</string>
     <string name="title_activity_shop_details">Shop Details</string>
     <string name="title_activity_shop_detail_entry">Shop Details Entry</string>
     <string name="title_activity_google_map">Map</string>
     <string name="title_activity_add_item">Add Items</string>
-    <string name="title_activity_edit_item">EditItemActivity</string>
+    <string name="title_activity_edit_item">Edit Item</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
